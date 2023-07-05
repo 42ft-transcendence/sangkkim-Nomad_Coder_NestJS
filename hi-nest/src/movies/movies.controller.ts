@@ -30,11 +30,7 @@ export class MoviesController {
 
   @Get('/:id')
   getOne(@Param('id') movieId: number): Movie {
-    const movie = this.moviesService.getOne(movieId); // this is a fake DB
-    if (!movie) {
-      throw new NotFoundException(`Movie with ID ${movieId} not found.`);
-    }
-    return movie;
+    return this.moviesService.getOne(movieId);
   }
 
   @Post()
